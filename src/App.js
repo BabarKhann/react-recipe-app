@@ -31,18 +31,19 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="container">
       <form onSubmit={getSearch}>
-        <input className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+        <input className="form-control"
           type="text"
           value={search}
           onChange={searchHandler}
           placeholder="Search Recipe"
         />
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button type="submit" className="btn btn-primary rounded">
           Search
         </button>
       </form>
+      <hr />
       {
         recipes.map(recipe => (
           <Recipe key={recipe.recipe.label} title={recipe.recipe.label} calories={recipe.recipe.calories} image={recipe.recipe.image} />
